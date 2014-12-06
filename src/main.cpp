@@ -79,7 +79,7 @@ main
     /// Generate the synthetic images for the OCRB true type font using Freetype
     unsigned DIGIT[10] = { 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 };
     unsigned UPPER[27] = { 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
-			               50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 102 };
+                           50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 102 };
     unsigned DELIM[1] = { 31 };
     std::vector<unsigned> characters;
     characters.insert(characters.end(), DIGIT, DIGIT + sizeof(DIGIT)/sizeof(DIGIT[0]));

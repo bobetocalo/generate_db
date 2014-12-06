@@ -37,7 +37,7 @@ affineTransform
 
   // 2x3 transformation matrix (2D rotation + 2D translation + scale)
   cv::Matx23f M( scale*cos(angle), sin(angle), tx,
-                -sin(angle), scale*cos(angle), ty);
+                -sin(angle), scale*cos(angle), ty );
 
   cv::Mat output;
   cv::warpAffine(img, output, M, output.size());

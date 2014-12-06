@@ -20,26 +20,26 @@ MESSAGE(STATUS "BOOST_INCLUDE_DIRS=${Boost_INCLUDE_DIR}")
 
 FIND_PACKAGE(Freetype REQUIRED)
 IF (FREETYPE_FOUND)
-	MESSAGE(STATUS "FreeType2 Library Found OK")
+    MESSAGE(STATUS "FreeType2 Library Found OK")
 ENDIF(FREETYPE_FOUND)
 
 #-- Find include files
 INCLUDE_DIRECTORIES(
-	${OpenCV_INCLUDE_DIRS}
-	${Boost_INCLUDE_DIRS}
-	${FREETYPE_INCLUDE_DIRS}
-	${CMAKE_SOURCE_DIR}/include
+    ${OpenCV_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIRS}
+    ${FREETYPE_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/include
 )
 
 #-- Add .h and .cpp files to the project
 ADD_EXECUTABLE(test_generate_db
     ${CMAKE_SOURCE_DIR}/include/Constants.hpp
     ${CMAKE_SOURCE_DIR}/src/Constants.cpp
-	${CMAKE_SOURCE_DIR}/include/operations.hpp
-	${CMAKE_SOURCE_DIR}/src/operations.cpp
-	${CMAKE_SOURCE_DIR}/include/MyFreetype.hpp 
-	${CMAKE_SOURCE_DIR}/src/MyFreetype.cpp  
-	${CMAKE_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/include/operations.hpp
+    ${CMAKE_SOURCE_DIR}/src/operations.cpp
+    ${CMAKE_SOURCE_DIR}/include/MyFreetype.hpp 
+    ${CMAKE_SOURCE_DIR}/src/MyFreetype.cpp  
+    ${CMAKE_SOURCE_DIR}/src/main.cpp
 )
 
 #-- Link the executable to the libraries
@@ -49,5 +49,5 @@ TARGET_LINK_LIBRARIES(test_generate_db
     tiff
     png
     ${Boost_LIBRARIES}
-	${FREETYPE_LIBRARIES}
+    ${FREETYPE_LIBRARIES}
 )
