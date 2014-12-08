@@ -24,7 +24,7 @@ namespace urjc {
 
 /** ****************************************************************************
  * @class MyFreetype
- * @brief A class that stores images information.
+ * @brief A class that use Freetype library to generate images.
  ******************************************************************************/
 class MyFreetype
 {
@@ -32,16 +32,23 @@ public:
 
   // Constructor
   MyFreetype
-    (
-    std::vector<unsigned> &characters
-    );
+    () {};
 
   // Destroyer
   ~MyFreetype
     () {};
 
   /**
-   * @brief Generate a set of character images using a true type font.
+   * @brief Set characters of interest.
+   */
+  void
+  setCharacters
+    (
+    std::vector<unsigned> &characters
+    );
+
+  /**
+   * @brief Generate a list of synthetic images using a True Type font.
    */
   void
   generateImagesFromTrueTypeFont
@@ -50,14 +57,14 @@ public:
     );
 
   /**
-   * @brief Apply image random algorithm operations.
+   * @brief Repeat images and apply random algorithm operations.
    */
   void
   transformImages
     ();
 
   /**
-   * @brief Save synthetic character images to the specific directory.
+   * @brief Save synthetic images in the output directory.
    */
   void
   saveImages
@@ -78,16 +85,7 @@ private:
     FT_Face &face
     );
 
-  /**
-   * @brief Returns the character associated to this index.
-   */
-  std::string
-  freetypeCharCode2String
-    (
-    const int idx
-    );
-
-  // 10 digits + 26 uppers + 26 lowers
+  // Set digits + uppers + lowers + delimiter
   std::vector<unsigned> m_characters;
 
   // For each character store images with different fonts and rotations

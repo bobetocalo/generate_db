@@ -1,6 +1,6 @@
 /** ****************************************************************************
- *  @file    trace.hpp
- *  @brief   Debug macros definition.
+ *  @file    utils.hpp
+ *  @brief   Converting a character code into a ascii index.
  *  @author  Roberto Valle Fernandez.
  *  @date    2012/01
  *  @copyright All rights reserved.
@@ -9,21 +9,32 @@
  ******************************************************************************/
 
 // ------------------ RECURSION PROTECTION -------------------------------------
-#ifndef TRACE_HPP_
-#define TRACE_HPP_
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
 // ----------------------- INCLUDES --------------------------------------------
-#include <iostream>
+#include <string>
 
-#define PRINT(...) std::cout << __VA_ARGS__ << std::endl;
-#define ERROR(...) std::cerr << __VA_ARGS__ << std::endl;
+namespace urjc {
 
-#ifndef _RELEASE
-  #define TRACE(...) std::cout << __VA_ARGS__ << std::endl;
-  #define TRACE_INFO(...) std::cout << __FILE__ << "(" << __LINE__ << "):" << __VA_ARGS__ << std::endl;
-#else
-  #define TRACE(...)
-  #define TRACE_INFO(...)
-#endif
+/**
+ *  @brief Returns the character associated to this ascii index.
+ */
+std::string
+asciiCode2String
+  (
+  const int idx
+  );
 
-#endif /* TRACE_HPP_ */
+/**
+ *  @brief Returns the ascii index associated to this character.
+ */
+int
+string2AsciiCode
+  (
+  const std::string character
+  );
+
+}; // close namespace urjc
+
+#endif /* UTILS_HPP */

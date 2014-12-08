@@ -33,8 +33,11 @@ INCLUDE_DIRECTORIES(
 
 #-- Add .h and .cpp files to the project
 ADD_EXECUTABLE(test_generate_db
+    ${CMAKE_SOURCE_DIR}/include/trace.hpp
     ${CMAKE_SOURCE_DIR}/include/Constants.hpp
     ${CMAKE_SOURCE_DIR}/src/Constants.cpp
+    ${CMAKE_SOURCE_DIR}/include/utils.hpp
+    ${CMAKE_SOURCE_DIR}/src/utils.cpp
     ${CMAKE_SOURCE_DIR}/include/operations.hpp
     ${CMAKE_SOURCE_DIR}/src/operations.cpp
     ${CMAKE_SOURCE_DIR}/include/MyFreetype.hpp 
